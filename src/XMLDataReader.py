@@ -14,6 +14,8 @@ class XMLDataReader(DataReader):
         root = tree.getroot()
 
         for student in root:
-            self.students[student.attrib["name"]] = [(subject.attrib["name"], int(subject.text)) for subject in student]
+            self.students[student.attrib["name"]] = \
+                [(subject.attrib["name"], int(subject.text))
+                 for subject in student]
 
         return self.students
