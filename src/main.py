@@ -5,7 +5,7 @@ import sys
 from CalcRating import CalcRating
 from TextDataReader import TextDataReader
 from XMLDataReader import XMLDataReader
-
+from CalcExcellent import CalcExcellent
 
 def get_path_from_arguments(args) -> str:
     parser = argparse.ArgumentParser(description="Path to datafile")
@@ -32,6 +32,12 @@ def main():
 
     rating = CalcRating(students).calc()
     print("Rating: ", rating)
+
+    excellent = CalcExcellent(students).calc()
+    if excellent is None:
+        print("Excellent student not found")
+    else:
+        print("Excellent student:", excellent)
 
 
 if __name__ == "__main__":
