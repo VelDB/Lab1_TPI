@@ -6,7 +6,6 @@ import xml.etree.ElementTree as ET
 class XMLDataReader(DataReader):
 
     def __init__(self) -> None:
-        self.key: str = ""
         self.students: DataType = {}
 
     def read(self, path: str) -> DataType:
