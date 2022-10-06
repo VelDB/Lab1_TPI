@@ -2,6 +2,7 @@ from Types import DataType
 
 
 class CalcExcellent:
+    """Поиск студента с идеальными баллами"""
     def __init__(self, data: DataType) -> None:
         self.data: DataType = data
 

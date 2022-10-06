@@ -19,6 +19,7 @@ def get_path_from_arguments(args) -> str:
 def main():
     path = get_path_from_arguments(sys.argv[1:])
 
+    # Выбор класса для чтения файла по его расширению
     *name, ext = path.split(".")
     if ext == "txt":
         reader = TextDataReader()
@@ -34,6 +35,7 @@ def main():
     rating = CalcRating(students).calc()
     print("Rating: ", rating)
 
+    # Выбор студента с оценками 100 по всем предметам
     excellent = CalcExcellent(students).calc()
     if excellent is None:
         print("Excellent student not found")
